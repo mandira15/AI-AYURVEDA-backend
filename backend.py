@@ -9,7 +9,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 # Initialize FastAPI app
 app = FastAPI(title="AI-Ayurveda Backend")
+@app.get("/")
 
+def read_root():
+
+    return {"message": "Welcome to AI Ayurveda backend!"}
 # Enable CORS to allow frontend communication
 app.add_middleware(
     CORSMiddleware,
